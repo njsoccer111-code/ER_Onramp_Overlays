@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticker Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1280px;
+            height: 100px;
+            background: transparent;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .ticker-container {
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            border-top: 3px solid #d4af37;
+            border-bottom: 3px solid #d4af37;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .ticker-content {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll 15s linear infinite;
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .ticker-item {
+            margin: 0 40px;
+            display: flex;
+            align-items: center;
+            min-width: max-content;
+        }
+
+        .ticker-item span:first-child {
+            color: #d4af37;
+            margin-right: 10px;
+        }
+
+        .ticker-item span:last-child {
+            color: #4ade80;
+        }
+
+        .ticker-item.negative span:last-child {
+            color: #ef4444;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker-container">
+        <div class="ticker-content">
+            <div class="ticker-item">
+                <span>Bitcoin:</span>
+                <span>$67,250 +2.3%</span>
+            </div>
+            <div class="ticker-item">
+                <span>Ethereum:</span>
+                <span>$3,450 +1.1%</span>
+            </div>
+            <div class="ticker-item">
+                <span>Solana:</span>
+                <span>$182 +4.2%</span>
+            </div>
+            <div class="ticker-item negative">
+                <span>Gold:</span>
+                <span>$2,050 -0.8%</span>
+            </div>
+            <div class="ticker-item">
+                <span>Bitcoin:</span>
+                <span>$67,250 +2.3%</span>
+            </div>
+            <div class="ticker-item">
+                <span>Ethereum:</span>
+                <span>$3,450 +1.1%</span>
+            </div>
+            <div class="ticker-item">
+                <span>Solana:</span>
+                <span>$182 +4.2%</span>
+            </div>
+            <div class="ticker-item negative">
+                <span>Gold:</span>
+                <span>$2,050 -0.8%</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
